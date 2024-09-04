@@ -13,7 +13,7 @@ class MRUCache(BaseCaching):
 
     def put(self, key, item):
         """Assign self, key, item to dictionary"""
-        if key is not none and item is not none:
+        if key and item:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 removed = self.order.pop()
                 self.cache_data.pop(removed)

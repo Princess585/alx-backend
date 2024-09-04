@@ -13,7 +13,7 @@ class LRUCache(BaseCaching):
 
     def put(self, key, item):
         """Assign self, key, item to dict"""
-        if key not in self.cache_info:
+        if key and item:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 removed = self.order.pop(0)
                 self.cache_data.pop(removed)
